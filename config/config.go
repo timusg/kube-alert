@@ -11,13 +11,15 @@ import (
 
 // AlertConfig is the main program configuration, passed to controllers Init()
 type AlertConfig struct {
-	DryRun     bool
-	Logger     *logrus.Logger
-	ClientSet  *kubernetes.Clientset
-	DdAppKey   string
-	DdAPIKey   string
-	HealthPort int
-	MsgPrefix  string
+	DryRun           bool
+	Logger           *logrus.Logger
+	ClientSet        *kubernetes.Clientset
+	DdAppKey         string
+	DdAPIKey         string
+	HealthPort       int
+	MsgPrefix        string
+	SlackToken       string
+	SlackChannelName string
 }
 
 // Init initialize the configuration (creating the ClientSet for the cluster)

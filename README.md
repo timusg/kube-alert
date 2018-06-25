@@ -8,7 +8,7 @@ kube-alert monitors:
 * Cluster's components status (issues with etcd, scheduler, or controller-manager daemons)
 * Nodes status (out-of-disk, memory pressure, network unavailable, ...)
 
-Support alerting to Datadog and to logs (ie. syslog).
+Support alerting to Datadog, Slack and to logs (ie. syslog).
 
 ## Build
 
@@ -72,6 +72,8 @@ env KUBECONFIG=/etc/kube/config \
     KUBE_ALERT_HEALTHCHECK_PORT=8081 \
     KUBE_ALERT_DATADOG.APP_KEY="xxx" \
     KUBE_ALERT_DATADOG.API_KEY="xxx" \
+    KUBE_ALERT_SLACK_TOKEN="xxx" \
+    KUBE_ALERT_SLACK_CHANNEL_NAME="xxx" \
     KUBE_ALERT_DRY_RUN=true \
     KUBE_ALERT_LOG.LEVEL=info \
     KUBE_ALERT_API_SERVER="http://example.com:8080" \

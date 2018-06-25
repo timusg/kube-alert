@@ -6,6 +6,7 @@ import (
 	"github.com/bpineau/kube-alert/config"
 	"github.com/bpineau/kube-alert/pkg/notifiers/datadog"
 	"github.com/bpineau/kube-alert/pkg/notifiers/log"
+	"github.com/bpineau/kube-alert/pkg/notifiers/slack"
 )
 
 // Notifier sends alerts (title + message) to a backend
@@ -17,6 +18,7 @@ type Notifier interface {
 var Notifiers = []Notifier{
 	&log.Notifier{},
 	&datadog.Notifier{},
+	&slack.Notifier{},
 }
 
 // Notify logs events and calls each notifiers' own Notify()

@@ -38,12 +38,14 @@ var (
 
 		Run: func(cmd *cobra.Command, args []string) {
 			config := &config.AlertConfig{
-				DryRun:     viper.GetBool("dry-run"),
-				Logger:     klog.New(viper.GetString("log.level"), viper.GetString("log.server"), viper.GetString("log.output")),
-				DdAppKey:   viper.GetString("datadog.app-key"),
-				DdAPIKey:   viper.GetString("datadog.api-key"),
-				HealthPort: viper.GetInt("healthcheck-port"),
-				MsgPrefix:  viper.GetString("messages-prefix"),
+				DryRun:           viper.GetBool("dry-run"),
+				Logger:           klog.New(viper.GetString("log.level"), viper.GetString("log.server"), viper.GetString("log.output")),
+				DdAppKey:         viper.GetString("datadog.app-key"),
+				DdAPIKey:         viper.GetString("datadog.api-key"),
+				SlackToken:       viper.GetString("slack-token"),
+				SlackChannelName: viper.GetString("slack-channel-name"),
+				HealthPort:       viper.GetInt("healthcheck-port"),
+				MsgPrefix:        viper.GetString("messages-prefix"),
 			}
 			config.Init(viper.GetString("api-server"), viper.GetString("kube-config"))
 			run.Run(config)

@@ -22,8 +22,4 @@ import:
   version: ~1.0.3
 - package: github.com/zorkian/go-datadog-api
   version: v2.5
-# See https://github.com/sirupsen/logrus/issues/553
-- package: github.com/Sirupsen/logrus
-  repo: git@github.com:/sirupsen/logrus
-  vcs: git
-  version: ~1.0.3
+- package: github.com/bluele/slack
